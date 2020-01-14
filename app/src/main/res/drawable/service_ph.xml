@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:opacity="translucent"
+    tools:targetApi="m">
+    <item
+        android:width="100dp"
+        android:height="100dp"
+        android:drawable="@color/light_grey" />
+    <item
+        android:width="40dp"
+        android:height="40dp"
+        android:gravity="center">
+        <bitmap
+            android:alpha="0.5"
+            android:src="@drawable/uber_icon" />
+    </item>
+
+</layer-list>

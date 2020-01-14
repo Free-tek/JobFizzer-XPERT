@@ -1,0 +1,1090 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_detailed_booking"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    tools:ignore="MissingPrefix">
+
+    <FrameLayout
+        android:id="@+id/frameLay"
+        android:layout_width="match_parent"
+        android:layout_height="240dp">
+
+
+        <ImageView
+            android:id="@+id/mapData"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:contentDescription="@string/todo"
+            android:scaleType="centerCrop"
+            android:src="@drawable/samplemap" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/todo"
+            android:scaleType="centerCrop"
+            android:src="@drawable/concentric_circle" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.1"
+            android:background="@color/ovarlay_blue" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/white_top_gradient" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:elevation="5dp"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:paddingBottom="10dp"
+            tools:targetApi="lollipop">
+
+            <Button
+                android:id="@+id/startPlace"
+                style="@style/WhiteBtnRipple"
+                android:layout_width="180dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="?colorPrimary"
+                android:singleLine="true"
+                android:text="@string/start_to_place"
+                android:textColor="@color/white"
+                android:textSize="@dimen/very_small_text" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/white_bottom_gradient" />
+
+
+    </FrameLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/ripple_white_bg"
+            android:contentDescription="@string/todo"
+            android:padding="5dp"
+            android:src="@drawable/ic_arrow_back" />
+
+        <TextView
+            android:id="@+id/serviceName"
+            fontPath="@string/font_medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/order_confirmation"
+            android:textColor="@color/text_colour"
+            android:textSize="@dimen/very_large_text"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/frameLay"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingBottom="100dp">
+
+            <RelativeLayout
+                android:id="@+id/topBillingLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    tools:ignore="UselessParent">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            fontPath="@string/font_medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/hours"
+                            android:textColor="@color/text_colour"
+                            android:textSize="@dimen/very_normal_text" />
+
+                        <TextView
+                            android:id="@+id/hoursValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="?colorPrimary"
+                            android:textSize="@dimen/normal_text" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:alpha="0.3"
+                        android:background="@color/new_grey" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/taxName"
+                                fontPath="@string/font_medium"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/text_colour"
+                                android:textSize="@dimen/very_normal_text" />
+
+                            <TextView
+                                android:id="@+id/taxPercentage"
+                                fontPath="@string/font_medium"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:textColor="@color/text_colour"
+                                android:textSize="@dimen/very_normal_text" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/bookingGst"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:textColor="?colorPrimary"
+                            android:textSize="@dimen/normal_text" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:alpha="0.2"
+                        android:background="@color/new_grey"
+                        android:visibility="gone" />
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            fontPath="@string/font_medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/total"
+                            android:textColor="@color/text_colour"
+                            android:textSize="@dimen/very_normal_text" />
+
+                        <TextView
+                            android:id="@+id/totalCostandTime"
+                            fontPath="@string/font_regular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="?colorPrimary"
+                            android:textSize="@dimen/normal_text" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:alpha="0.3"
+                        android:background="@color/new_grey" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/id_imgbtn_receipt"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/ic_payment"
+                            android:contentDescription="@string/todo"
+                            android:gravity="center" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:alpha="0.2"
+                        android:background="@color/new_grey"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/statusTextValue"
+                    fontPath="@string/font_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="@string/booking_status"
+                    android:textColor="@color/text_colour"
+                    android:textSize="@dimen/very_normal_text" />
+
+
+                <TextView
+                    android:id="@+id/statusText"
+                    fontPath="@string/font_regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/statusTextValue"
+                    android:layout_marginTop="5dp"
+                    android:gravity="end"
+                    android:textColor="@color/text_colour"
+                    android:textSize="@dimen/very_normal_text" />
+
+                <TextView
+                    android:id="@+id/working_progress"
+                    fontPath="fonts/Ubuntu-Regular.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/statusText"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginLeft="25dp"
+                    android:gravity="right"
+                    android:text="work in progress"
+                    android:textColor="@color/status_orange"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/clock"
+                    android:id="@+id/clock"
+                    android:tint="?colorPrimary"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/statusText" />
+                <!--android:="@+id/working_progress"-->
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="5dp"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/billingText"
+                    fontPath="@string/font_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="@string/billing_name_head"
+                    android:textColor="@color/text_colour" />
+
+                <TextView
+                    android:id="@+id/billingName"
+                    fontPath="@string/font_regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/billingText"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="5dp"
+                    android:gravity="end"
+                    android:textColor="@color/text_colour" />
+
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:alpha="0.2"
+                android:background="@color/new_grey" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/booking_id_text"
+                    fontPath="@string/font_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:gravity="start"
+                    android:text="@string/booking_id_head"
+                    android:textColor="@color/text_colour" />
+
+                <TextView
+                    android:id="@+id/bookingId"
+                    fontPath="@string/font_regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/booking_id_text"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="5dp"
+                    android:gravity="end"
+                    android:textColor="@color/text_colour" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:alpha="0.2"
+                android:background="@color/new_grey" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/booking_date_text"
+                    fontPath="@string/font_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:gravity="start"
+                    android:text="@string/date_and_time"
+                    android:textColor="@color/text_colour" />
+
+                <TextView
+                    android:id="@+id/bokkingDate"
+                    fontPath="@string/font_regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/booking_date_text"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="5dp"
+                    android:gravity="end"
+                    android:textColor="@color/text_colour" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:alpha="0.2"
+                android:background="@color/new_grey" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/address_text"
+                    fontPath="@string/font_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:gravity="start"
+                    android:text="@string/address_head"
+                    android:textColor="@color/text_colour" />
+
+                <TextView
+                    android:id="@+id/bookingAddress"
+                    fontPath="@string/font_regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/address_text"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/text_colour" />
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/billLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:alpha="0.2"
+                    android:background="@color/new_grey" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/price_text"
+                        fontPath="@string/font_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:gravity="start"
+                        android:text="@string/price_head"
+                        android:textColor="@color/text_colour" />
+
+                    <TextView
+                        android:id="@+id/pricePerhour"
+                        fontPath="@string/font_regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/price_text"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="5dp"
+                        android:gravity="end"
+                        android:textColor="@color/text_colour" />
+                </RelativeLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:alpha="0.2"
+                    android:background="@color/new_grey" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+
+                <TextView
+                    fontPath="@string/font_regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="start"
+                    android:text="@string/service_head"
+                    android:textColor="@color/text_colour" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/layOne"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.15"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="15dp"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                tools:ignore="UselessParent">
+
+                                <ImageView
+                                    android:id="@+id/firstCircle"
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:contentDescription="@string/todo"
+                                    android:src="@drawable/circle_violeet_transparent"
+                                    android:tint="?colorPrimary" />
+
+                                <View
+                                    android:id="@+id/viewOne"
+                                    android:layout_width="2dp"
+                                    android:layout_height="match_parent"
+                                    android:background="?colorPrimary" />
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.85"
+                            android:gravity="center_vertical"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp">
+
+                            <com.loopeer.shadow.ShadowView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="40dp"
+                                android:layout_marginBottom="5dp"
+                                app:cornerRadius="8dp"
+                                app:shadowColor="@color/shadow_bg_color"
+                                app:shadowMargin="10dp"
+                                app:shadowRadius="25dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_marginEnd="20dp"
+                                    android:layout_marginBottom="15dp"
+                                    android:background="@color/transparent">
+
+                                    <TextView
+                                        android:id="@+id/textOne"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        tools:ignore="TooDeepLayout" />
+
+                                </LinearLayout>
+                            </com.loopeer.shadow.ShadowView>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layTwo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.15"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginBottom="0dp"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                tools:ignore="UselessParent">
+
+                                <View
+                                    android:id="@+id/viewTwo"
+                                    android:layout_width="2dp"
+                                    android:layout_height="30dp"
+                                    android:background="?colorPrimary" />
+
+                                <ImageView
+                                    android:id="@+id/secondCircle"
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:contentDescription="@string/todo"
+                                    android:src="@drawable/circle_violeet_transparent"
+                                    android:tint="?colorPrimary" />
+
+                                <View
+                                    android:id="@+id/viewThree"
+                                    android:layout_width="2dp"
+                                    android:layout_height="match_parent"
+                                    android:background="?colorPrimary" />
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.85"
+                            android:gravity="center_vertical"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp">
+
+                            <com.loopeer.shadow.ShadowView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="40dp"
+                                android:layout_marginBottom="5dp"
+                                app:cornerRadius="8dp"
+                                app:shadowColor="@color/shadow_bg_color"
+                                app:shadowMargin="10dp"
+                                app:shadowRadius="25dp">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_marginEnd="30dp"
+                                    android:layout_marginBottom="15dp">
+
+                                    <TextView
+                                        android:id="@+id/textTwo"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+
+
+                                </LinearLayout>
+                            </com.loopeer.shadow.ShadowView>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layThree"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.15"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                tools:ignore="UselessParent">
+
+                                <View
+                                    android:id="@+id/viewFour"
+                                    android:layout_width="2dp"
+                                    android:layout_height="30dp"
+                                    android:background="?colorPrimary" />
+
+                                <ImageView
+                                    android:id="@+id/thirdCircle"
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:contentDescription="@string/todo"
+                                    android:src="@drawable/circle_violeet_transparent"
+                                    android:tint="?colorPrimary"
+                                    tools:ignore="TooManyViews" />
+
+                                <View
+                                    android:id="@+id/viewFive"
+                                    android:layout_width="2dp"
+                                    android:layout_height="match_parent"
+                                    android:background="?colorPrimary" />
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.85"
+                            android:gravity="center_vertical"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp">
+
+                            <com.loopeer.shadow.ShadowView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="40dp"
+                                android:layout_marginBottom="5dp"
+                                app:cornerRadius="8dp"
+                                app:shadowColor="@color/shadow_bg_color"
+                                app:shadowMargin="10dp"
+                                app:shadowRadius="25dp">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_marginEnd="30dp"
+                                    android:layout_marginBottom="15dp">
+
+                                    <TextView
+                                        android:id="@+id/textThree"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+
+
+                                </LinearLayout>
+                            </com.loopeer.shadow.ShadowView>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layFour"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.15"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                tools:ignore="UselessParent">
+
+                                <View
+                                    android:id="@+id/viewSix"
+                                    android:layout_width="2dp"
+                                    android:layout_height="30dp"
+                                    android:background="?colorPrimary" />
+
+
+                                <ImageView
+                                    android:id="@+id/fourthCircle"
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:contentDescription="@string/todo"
+                                    android:src="@drawable/circle_violeet_transparent"
+                                    android:tint="?colorPrimary" />
+
+                                <View
+                                    android:id="@+id/viewSeven"
+                                    android:layout_width="2dp"
+                                    android:layout_height="match_parent"
+                                    android:background="?colorPrimary" />
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.85"
+                            android:gravity="center_vertical"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp">
+
+                            <com.loopeer.shadow.ShadowView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="40dp"
+                                android:layout_marginBottom="5dp"
+                                app:cornerRadius="8dp"
+                                app:shadowColor="@color/shadow_bg_color"
+                                app:shadowMargin="10dp"
+                                app:shadowRadius="25dp">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_marginEnd="30dp"
+                                    android:layout_marginBottom="15dp">
+
+                                    <TextView
+                                        android:id="@+id/textFour"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+
+
+                                </LinearLayout>
+                            </com.loopeer.shadow.ShadowView>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layFive"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.15"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                tools:ignore="UselessParent">
+
+                                <View
+                                    android:id="@+id/viewEight"
+                                    android:layout_width="2dp"
+                                    android:layout_height="30dp"
+                                    android:background="?colorPrimary" />
+
+
+                                <ImageView
+                                    android:id="@+id/fivthCircle"
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:contentDescription="@string/todo"
+                                    android:src="@drawable/circle_violeet_transparent"
+                                    android:tint="?colorPrimary" />
+
+                                <View
+                                    android:id="@+id/viewNine"
+                                    android:layout_width="2dp"
+                                    android:layout_height="match_parent"
+                                    android:background="?colorPrimary" />
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.85"
+                            android:gravity="center_vertical"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp">
+
+                            <com.loopeer.shadow.ShadowView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="40dp"
+                                android:layout_marginBottom="5dp"
+                                app:cornerRadius="8dp"
+                                app:shadowColor="@color/shadow_bg_color"
+                                app:shadowMargin="10dp"
+                                app:shadowRadius="25dp">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_marginEnd="30dp"
+                                    android:layout_marginBottom="15dp">
+
+                                    <TextView
+                                        android:id="@+id/textFive"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+
+
+                                </LinearLayout>
+                            </com.loopeer.shadow.ShadowView>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/laySix"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.15"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                tools:ignore="UselessParent">
+
+                                <View
+                                    android:id="@+id/viewTen"
+                                    android:layout_width="2dp"
+                                    android:layout_height="30dp"
+                                    android:background="?colorPrimary" />
+
+                                <ImageView
+                                    android:id="@+id/sixCircle"
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:contentDescription="@string/todo"
+                                    android:src="@drawable/circle_violeet_transparent"
+                                    android:tint="?colorPrimary" />
+
+
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.85"
+                            android:gravity="center_vertical"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp">
+
+                            <com.loopeer.shadow.ShadowView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="40dp"
+                                android:layout_marginBottom="5dp"
+                                app:cornerRadius="8dp"
+                                app:shadowColor="@color/shadow_bg_color"
+                                app:shadowMargin="10dp"
+                                app:shadowRadius="25dp">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_marginEnd="30dp"
+                                    android:layout_marginBottom="15dp">
+
+                                    <TextView
+                                        android:id="@+id/textSix"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+
+
+                                </LinearLayout>
+                            </com.loopeer.shadow.ShadowView>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+    <com.leinardi.android.speeddial.SpeedDialOverlayLayout
+        android:id="@+id/overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:clickable_overlay="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <com.leinardi.android.speeddial.SpeedDialView
+        android:id="@+id/speedDial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom|end"
+        app:sdExpansionMode="top"
+        app:sdMainFabAnimationRotateAngle="90"
+        app:sdMainFabClosedBackgroundColor="?colorPrimary"
+        app:sdMainFabClosedSrc="@drawable/fab_add"
+        app:sdMainFabOpenedBackgroundColor="?colorPrimary"
+        app:sdMainFabOpenedSrc="@drawable/fab_edit"
+        app:sdOverlayLayout="@id/overlay"
+        app:sdUseReverseAnimationOnClose="true" />
+
+</RelativeLayout>

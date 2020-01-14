@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rootView"
+    android:orientation="vertical">
+
+    <include layout="@layout/custom_toolbar" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/addressLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:paddingLeft="50dp"
+            android:paddingTop="10dp"
+            android:paddingRight="50dp"
+            android:visibility="visible">
+
+            <android.support.design.widget.TextInputLayout
+                fontPath="@string/font_regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="@color/text_colour_light"
+                android:textColorHint="@color/text_colour_light">
+
+                <EditText
+                    android:id="@+id/addressOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/text_colour_light"
+                    android:hint="@string/address1"
+                    android:singleLine="true"
+                    android:textColorHint="@color/text_colour_light"
+                    android:textSize="@dimen/normal_text" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                fontPath="@string/font_regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="@color/text_colour_light"
+                android:textColorHint="@color/text_colour_light">
+
+                <EditText
+                    android:id="@+id/addressTwo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/text_colour_light"
+                    android:hint="@string/address2"
+                    android:singleLine="true"
+                    android:textColorHint="@color/text_colour_light"
+                    android:textSize="@dimen/normal_text" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                fontPath="@string/font_regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="@color/text_colour_light"
+                android:textColorHint="@color/text_colour_light">
+
+                <EditText
+                    android:id="@+id/city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/text_colour_light"
+                    android:hint="@string/city"
+                    android:singleLine="true"
+                    android:textColorHint="@color/text_colour_light"
+                    android:textSize="@dimen/normal_text" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                fontPath="@string/font_regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="@color/text_colour_light"
+                android:textColorHint="@color/text_colour_light">
+
+                <EditText
+                    android:id="@+id/state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/text_colour_light"
+                    android:hint="@string/state"
+                    android:singleLine="true"
+                    android:textColorHint="@color/text_colour_light"
+                    android:textSize="@dimen/normal_text" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                fontPath="@string/font_regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="@color/text_colour_light"
+                android:textColorHint="@color/text_colour_light">
+
+                <EditText
+                    android:id="@+id/zipCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/text_colour_light"
+                    android:hint="@string/zipcode"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textColorHint="@color/text_colour_light"
+                    android:textSize="@dimen/normal_text" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/bottomButton"
+                style="@style/CustomBtnRipple"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:text="@string/save" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

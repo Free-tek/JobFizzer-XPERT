@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/topView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="2dp"
+    tools:ignore="MissingPrefix">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/white"
+        android:baselineAligned="false"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:alpha="0.9"
+            android:background="@drawable/ripple"
+            android:contentDescription="@string/todo"
+            android:padding="12dp"
+            android:src="@drawable/ic_arrow_back" />
+
+        <com.app.jobfizzerxp.utilities.customLibraries.CircleImageView
+            android:id="@+id/userImage"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@id/backButton"
+            android:src="@drawable/ic_dummy_profile"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/toolBarTitle"
+            fontPath="@string/font_regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:maxLength="15"
+            android:textColor="@color/text_colour"
+            android:textSize="@dimen/large_text" />
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/empty_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:visibility="visible"
+    tools:ignore="UseCompoundDrawables">
+
+    <ImageView
+        android:id="@+id/emptyIcon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/empty_icon" />
+
+    <TextView
+        android:id="@+id/empty_text"
+        fontPath="@string/font_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="5dp"
+        android:textColor="@color/text_colour"
+        android:textSize="@dimen/normal_text"
+        tools:ignore="MissingPrefix" />
+
+</LinearLayout>

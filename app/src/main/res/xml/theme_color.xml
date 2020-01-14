@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="md_grey_50">#6B7FFC</color>
+    <color name="md_grey_200">#FC6BB4</color>
+    <color name="md_grey_300">#6BB4FC</color>
+    <color name="md_grey_400">#FCE96B</color>
+    <color name="md_grey_500">#A56BFC</color>
+    <color name="md_grey_600">#FC6B6B</color>
+
+
+</resources>
