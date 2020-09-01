@@ -505,7 +505,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:backgroundTint="@color/text_colour_light"
-                            android:hint="@string/address2"
+                            android:hint="@string/country"
                             android:singleLine="true"
                             android:textColorHint="@color/text_colour_light"
                             android:textSize="@dimen/normal_text" />

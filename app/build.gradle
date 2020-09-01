@@ -16,7 +16,7 @@ android {
             keyAlias 'jobfizzerxp'
             keyPassword 'jobfizzerxp'
             storePassword 'jobfizzerxp'
-            storeFile file('E:/Mahesh files\'s/App\'s/UbderDoo/BaseBuild Change/uberdooXp/app/jobfizzerxp.jks')
+            //storeFile file('E:/Mahesh files\'s/App\'s/UbderDoo/BaseBuild Change/uberdooXp/app/jobfizzerxp.jks')
         }
     }
     compileSdkVersion 28
@@ -88,6 +88,7 @@ dependencies {
     implementation 'android.arch.lifecycle:viewmodel:1.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     implementation 'com.google.firebase:firebase-messaging:17.4.0'
+    implementation  'com.google.firebase:firebase-core:16.0.7'
     implementation 'com.mcxiaoke.volley:library:1.0.19'
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
     implementation 'uk.co.chrisjenx:calligraphy:2.3.0'

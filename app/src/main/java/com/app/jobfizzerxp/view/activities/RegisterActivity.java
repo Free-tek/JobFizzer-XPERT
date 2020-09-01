@@ -49,6 +49,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.app.jobfizzerxp.model.ImageUploadApiModel;
 import com.app.jobfizzerxp.model.SignUpApiModel;
@@ -188,7 +189,15 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             myCalendar.set(Calendar.YEAR, year);
             myCalendar.set(Calendar.MONTH, monthOfYear);
             myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-            updateLabel();
+
+            if (year > 2001){
+                Toast.makeText(RegisterActivity.this, "You need to be older than 17 years to sign up as an artisan", Toast.LENGTH_LONG).show();
+            }
+            else
+            {
+                updateLabel();
+            }
+
         }
     };
 
